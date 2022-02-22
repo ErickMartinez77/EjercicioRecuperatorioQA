@@ -15,12 +15,11 @@ public class VerificarBecaTest {
     public static void before(){
         MockedStatic<Helpers> helpersMockedStatic = Mockito.mockStatic(Helpers.class);
 
-        //Mockito.when(utilsMock.getNota(123)).thenReturn(90);
         helpersMockedStatic.when(()->Helpers.aplicaBeca(123)).thenReturn(false);
-        //Mockito.when(utilsMock.getNota(123)).thenReturn(90);
-        helpersMockedStatic.when(()->Helpers.aplicaBeca(123)).thenReturn(true);
-        //Mockito.when(utilsMock.getNota(123)).thenReturn(60);
-        helpersMockedStatic.when(()->Helpers.aplicaBeca(123)).thenReturn(true);
+
+        helpersMockedStatic.when(()->Helpers.aplicaBeca(1234)).thenReturn(true);
+
+        helpersMockedStatic.when(()->Helpers.aplicaBeca(12345)).thenReturn(true);
     }
     @Test
     public void verifyBecaA(){
@@ -31,17 +30,17 @@ public class VerificarBecaTest {
     }
     @Test
     public void verifyBecaB(){
-        Mockito.when(utilsMock.getNota(123)).thenReturn(90);
+        Mockito.when(utilsMock.getNota(1234)).thenReturn(90);
 
         VerificarBeca verificarBeca = new VerificarBeca(utilsMock);
-        Assertions.assertEquals("SI APLICA BECA", verificarBeca.recomendacionBeca(123),"ERROR");
+        Assertions.assertEquals("SI APLICA BECA", verificarBeca.recomendacionBeca(1234),"ERROR");
     }
     @Test
     public void verifyBecaC(){
-        Mockito.when(utilsMock.getNota(123)).thenReturn(60);
+        Mockito.when(utilsMock.getNota(12345)).thenReturn(60);
 
         VerificarBeca verificarBeca = new VerificarBeca(utilsMock);
-        Assertions.assertEquals("NO APLICA A BECA POR PROMEDIO ACADEMICO", verificarBeca.recomendacionBeca(123),"ERROR");
+        Assertions.assertEquals("NO APLICA A BECA POR PROMEDIO ACADEMICO", verificarBeca.recomendacionBeca(12345),"ERROR");
     }
 
 }
