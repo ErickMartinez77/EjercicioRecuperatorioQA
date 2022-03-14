@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ejercicioRecuperatorioTest.VerificarBecaTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-02-23T12:38:51" hostname="ERICK-MARTINEZ" time="0.055">
+  <properties/>
+  <testcase name="verifyBecaA()" classname="ejercicioRecuperatorioTest.VerificarBecaTest" time="0.042"/>
+  <testcase name="verifyBecaB()" classname="ejercicioRecuperatorioTest.VerificarBecaTest" time="0.005"/>
+  <testcase name="verifyBecaC()" classname="ejercicioRecuperatorioTest.VerificarBecaTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
